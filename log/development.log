@@ -1,0 +1,181 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateProducts (20200711103044)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" decimal, "make" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200711103044_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200711103044"]]
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateUsers (20200711121210)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200711121210_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200711121210"]]
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+Migrating to CreateAuthTokens (20200711121549)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "auth_tokens" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "value" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_0d66c22f4c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20200711121549_create_auth_tokens.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_auth_tokens_on_user_id" ON "auth_tokens" ("user_id")[0m
+  ↳ db/migrate/20200711121549_create_auth_tokens.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200711121549"]]
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-27 10:28:18.625410"], ["updated_at", "2020-07-27 10:28:18.625410"]]
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R5"], ["description", "Canon EOS R5 Mirrorless Camera"], ["price", 279000.0], ["make", 2019], ["created_at", "2020-07-27 10:28:28.835776"], ["updated_at", "2020-07-27 10:28:28.835776"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 700D"], ["description", "Canon EOS 700D DSLR Camera (EF-S 18-55mm IS II & EF-S 55-250mm IS II)"], ["price", 33291.0], ["make", 2019], ["created_at", "2020-07-27 10:28:28.837935"], ["updated_at", "2020-07-27 10:28:28.837935"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 1500D"], ["description", "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens)"], ["price", 25990.0], ["make", 2018], ["created_at", "2020-07-27 10:28:28.839291"], ["updated_at", "2020-07-27 10:28:28.839291"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS-1D X"], ["description", "Canon EOS-1D X Mark III DSLR Camera"], ["price", 576000.0], ["make", 2016], ["created_at", "2020-07-27 10:28:28.843546"], ["updated_at", "2020-07-27 10:28:28.843546"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 200D II Dslr"], ["description", "Canon EOS 200D II Dslr Camera (EF-S 18-55mm f4-5.6 IS STM)"], ["price", 47198.0], ["make", 2017], ["created_at", "2020-07-27 10:28:28.844981"], ["updated_at", "2020-07-27 10:28:28.844981"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS R5"], ["description", "Canon EOS R5 Mirrorless Camera"], ["price", 279000.0], ["make", 2019], ["created_at", "2020-07-27 10:28:40.768969"], ["updated_at", "2020-07-27 10:28:40.768969"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 700D"], ["description", "Canon EOS 700D DSLR Camera (EF-S 18-55mm IS II & EF-S 55-250mm IS II)"], ["price", 33291.0], ["make", 2019], ["created_at", "2020-07-27 10:28:40.771710"], ["updated_at", "2020-07-27 10:28:40.771710"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 1500D"], ["description", "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens)"], ["price", 25990.0], ["make", 2018], ["created_at", "2020-07-27 10:28:40.774042"], ["updated_at", "2020-07-27 10:28:40.774042"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS-1D X"], ["description", "Canon EOS-1D X Mark III DSLR Camera"], ["price", 576000.0], ["make", 2016], ["created_at", "2020-07-27 10:28:40.775813"], ["updated_at", "2020-07-27 10:28:40.775813"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "make", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Canon EOS 200D II Dslr"], ["description", "Canon EOS 200D II Dslr Camera (EF-S 18-55mm f4-5.6 IS STM)"], ["price", 47198.0], ["make", 2017], ["created_at", "2020-07-27 10:28:40.777516"], ["updated_at", "2020-07-27 10:28:40.777516"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+Started GET "/" for ::1 at 2020-07-27 16:10:54 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vijay/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started GET "/sw.js" for ::1 at 2020-07-27 16:10:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/sw.js" for ::1 at 2020-07-27 16:11:25 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
